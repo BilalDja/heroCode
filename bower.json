@@ -1,0 +1,21 @@
+{
+  "name": "heroCode",
+  "authors": [
+    "BILAL Djaghout <b.djaghout@gmail.com>"
+  ],
+  "description": "This project is to describe a workflow to Faycel",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
