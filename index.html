@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Play Like A HERO</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
+    </head>
+    <body>
+        <div class="container-fluid" ng-app="app">
+            <div ng-controller="customerController as vm">
+                <h1 class="text-center">Like a HERO</h1>
+                <div class="col-md-6 col-md-offset-3">
+                    <form novalidate ng-submit="vm.addCustomer()" name="newCustomerForm">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" ng-model="vm.newCustomer.name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input class="form-control" ng-model="vm.newCustomer.address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Add" class="btn btn-primary" ng-disabled="newCustomerForm.$invalid">
+                        </div>
+                    </form>
+                    <table class="table table-responsive table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="customer in vm.customers">
+                            <td>{{customer.name}}</td>
+                            <td>{{customer.address}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="js/app/coreModule.js"></script>
+        <script type="text/javascript" src="js/app/app.js"></script>
+        <script type="text/javascript" src="js/app/customers/customerModule.js"></script>
+        <script type="text/javascript" src="js/app/customers/customerController.js"></script>
+    </body>
+</html>
